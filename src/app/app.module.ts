@@ -11,15 +11,16 @@ import { RegisterPage } from '../pages/register/register';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { LoggedinPage } from '../pages/loggedin/loggedin';
 
 
 const firebaseAuth = {
-  apiKey: "AIzaSyBKNvXf_eLcWYMlMJ-QVVlDi3uZYuaL0oY",
-  authDomain: "teste-project-a5b94.firebaseapp.com",
-  databaseURL: "https://teste-project-a5b94.firebaseio.com",
-  projectId: "teste-project-a5b94",
+  apiKey: "AIzaSyDUJInX2pFB9Hx8_VL26J9DTz4zKmxmUp8",
+  authDomain: "teste-project-8b772.firebaseapp.com",
+  databaseURL: "https://teste-project-8b772.firebaseio.com",
+  projectId: "teste-project-8b772",
   storageBucket: "",
-  messagingSenderId: "166285580398"
+  messagingSenderId: "17554601451"
 };
 
 
@@ -28,7 +29,8 @@ const firebaseAuth = {
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    LoggedinPage
   ],
   imports: [
     BrowserModule,
@@ -41,13 +43,14 @@ const firebaseAuth = {
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    LoggedinPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFireAuth,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
