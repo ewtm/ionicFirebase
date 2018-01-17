@@ -9,6 +9,20 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+
+
+const firebaseAuth = {
+  apiKey: "AIzaSyBKNvXf_eLcWYMlMJ-QVVlDi3uZYuaL0oY",
+  authDomain: "teste-project-a5b94.firebaseapp.com",
+  databaseURL: "https://teste-project-a5b94.firebaseio.com",
+  projectId: "teste-project-a5b94",
+  storageBucket: "",
+  messagingSenderId: "166285580398"
+};
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -18,7 +32,9 @@ import { RegisterPage } from '../pages/register/register';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,6 +46,7 @@ import { RegisterPage } from '../pages/register/register';
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireAuth,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
